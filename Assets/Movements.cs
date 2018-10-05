@@ -31,17 +31,19 @@ public class Movements : MonoBehaviour
             start = true; 
             
         }
-        
+
         if (start == true)
         {
-            Speed = 0.05f;
             transform.Translate(Speed, 0f, 0f, Space.Self);
+            Speed = 0.05f;
 
         }
+        else Speed=0;
+
 
         if (Input.GetKey(KeyCode.S))
         {
-            Speed = (Speed / 5);
+            Speed = (Speed / 5f);
             transform.Translate(Speed, 0f, 0f, Space.Self);
         }
         
@@ -58,8 +60,13 @@ public class Movements : MonoBehaviour
 
         }
 
-      
+        if (Input.GetKey(KeyCode.R))
+        {
+            start = false;
 
+        }
+      
+        
 
 
 
