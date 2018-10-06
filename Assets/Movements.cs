@@ -6,7 +6,7 @@ public class Movements : MonoBehaviour
 {
 
     public Transform forward;
-    public bool start;
+    public bool start=false;
     public Transform Left;
     public Transform Right;
     public float Speed;
@@ -18,7 +18,7 @@ public class Movements : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       bool start = false;
+       
 
 
     }
@@ -26,7 +26,7 @@ public class Movements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             start = true; 
             
