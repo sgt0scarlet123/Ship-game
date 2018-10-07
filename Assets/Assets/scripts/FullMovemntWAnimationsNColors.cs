@@ -26,14 +26,11 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     public float countdown = 2;
 
 
-    //Void Start Sets all Bool´s to False, Sets SpeedRandomiser value And diffines Get Animation Component´s//
+    //Void Start Sets all Bool´s to False, Sets SpeedRandomiser value//
     void Start()
     {
         start = false;
         SpeedRandomiser = Random.Range(0.05f, 0.075f);
-        Standard = GetComponent<Animator>();
-        Left1 = GetComponent<Animator>();
-        Right1 = GetComponent<Animator>();
         standard = false;
         right = false;
         left = false;

@@ -18,7 +18,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -115.78, y: 0, z: 0}
+        value: {x: -15.78, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -27,7 +27,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: -115.78, y: 0, z: 0}
+        value: {x: -15.78, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -48,7 +48,7 @@ AnimationClip:
     - time: 1
       value: {fileID: 2100000, guid: 707353a9c67333f499324a0bde33f27d, type: 2}
     attribute: m_Materials.Array.data[0]
-    path: pCube3
+    path: 
     classID: 23
     script: {fileID: 0}
   m_SampleRate: 60
@@ -59,7 +59,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 358301679
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 23
@@ -101,7 +101,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -115.78
+        value: -15.78
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -110,7 +110,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: -115.78
+        value: -15.78
         inSlope: 0
         outSlope: 0
         tangentMode: 136
