@@ -10,7 +10,9 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     //Speed/1/
     public float Speed;
     public float SpeedRandomiser;
-  
+    public float SpeedMin;
+    public float SpeedMax;
+
     //Turn/2/
     public float right1;
     public float left1;
@@ -23,17 +25,22 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     public Animator Right1;
     public Animator Standard;
     public bool standard;
-    public float countdown = 2;
+    public float countdown;
 
 
     //Void Start Sets all Bool´s to False, Sets SpeedRandomiser value//
     void Start()
     {
         start = false;
-        SpeedRandomiser = Random.Range(0.05f, 0.075f);
+        SpeedMin = 0.005f;
+        SpeedMax = 0.05f;
+        SpeedRandomiser = Random.Range(SpeedMin, SpeedMax);
         standard = false;
         right = false;
         left = false;
+        left1 = -0.4f;
+        right1 = 0.8f;
+        countdown = 1.0f;
     }
 
     //void Update Sets Bool´s left And right to False every frame unless void Update calls a void Function//
@@ -97,6 +104,7 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             countdown -= Time.deltaTime;
+            transform.Rotate(0f, left1, 0f, Space.Self);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -109,12 +117,11 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && (left == true))
         {
             Left1.Play("Left2");
-            transform.Rotate(0f, left1, 0f, Space.Self);
         }
         if (Input.GetKeyUp(KeyCode.A))
             {
                 left = false;
-                countdown = 2;
+                countdown = 1.5f;
             }    
 
             
@@ -129,7 +136,7 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             countdown -= Time.deltaTime;
-
+            transform.Rotate(0f, right1, 0f, Space.Self);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -142,16 +149,15 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && (right == true))
         {
             Right1.Play("Right2");
-            transform.Rotate(0f, right1, 0f, Space.Self);
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
-            countdown = 2;
+            countdown = 1.5f;
             right = false;
         }
     }
-
 }
+
 
 
 
