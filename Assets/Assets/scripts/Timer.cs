@@ -23,9 +23,9 @@ public class Timer : MonoBehaviour
         Min = 0;
         Minutes = 0;
         Timer_Min_Sec = "Timer";
-                               
-        
-                
+
+
+
     }
 
     // Update is called once per frame
@@ -44,11 +44,26 @@ public class Timer : MonoBehaviour
     }
     void FixedUpdate()
     {
+        TimerScript();
 
+    }
+
+
+
+
+
+
+
+
+
+
+
+    public void TimerScript()
+    {
         if (timeonoff == true)
         {
             Sec += PlusOne * Time.deltaTime;
-            
+
         }
         timer = Mathf.RoundToInt(Sec);
         Minutes = Mathf.RoundToInt(Min);
@@ -63,20 +78,10 @@ public class Timer : MonoBehaviour
             Min = Min + 1;
             Sec = 0;
         }
-        Debug.LogFormat("{0},,{2},{3}:",Timer_Min_Sec,"",Minutes,timer,"");
+        Debug.LogFormat("{0},,{2},{3}:", Timer_Min_Sec, "", Minutes, timer, "");
+
+
     }
-        
-
-
-
-
-
-
-
-
-
-
-
 
 
 

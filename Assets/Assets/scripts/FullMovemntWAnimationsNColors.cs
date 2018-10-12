@@ -26,7 +26,15 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     public Animator Standard;
     public bool standard;
     public float countdown;
-
+   
+    //Timer/3/
+    public float Sec;
+    public bool timeonoff;
+    public int PlusOne;
+    public int timer;
+    public string Timer_Min_Sec = "zero";
+    public int Min;
+    public int Minutes;
 
     //Void Start Sets all Bool´s to False, Sets SpeedRandomiser value//
     void Start()
@@ -41,6 +49,12 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
         left1 = -0.4f;
         right1 = 0.8f;
         countdown = 1.0f;
+        Sec = 0;
+        PlusOne = 1;
+        timer = 0;
+        Min = 0;
+        Minutes = 0;
+        Timer_Min_Sec = "Timer";
     }
 
     //void Update Sets Bool´s left And right to False every frame unless void Update calls a void Function//
@@ -55,7 +69,10 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
         TurnRight();
         StopSlashAnchor();
     }
-
+    private void FixedUpdate()
+    {
+         TimerScript();
+    }
 
     //void Functions//
 
@@ -96,8 +113,12 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
             Speed = (Speed / 5f);
             transform.Translate(Speed, 0f, 0f, Space.Self);
         }
+        if ((timeonoff == true)&(timer >= 0))
+        {
+            SpeedRandomiser += 0.00001f;
+        }
     }
-
+      
     //void TrunLeft and TurnRight handels Left and Right turning//
     public void TurnLeft()
     {
@@ -123,7 +144,10 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
                 left = false;
                 countdown = 1.5f;
             }    
-
+        if ((timeonoff==true)&(timer >= 0))
+        {
+            left1 += -0.0001f;
+        }
             
 
 
@@ -155,7 +179,52 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
             countdown = 1.5f;
             right = false;
         }
+        if ((timeonoff == true) & timer >= 0)
+        {
+            right1 += 0.0001f;
+        }
     }
+
+    
+
+
+
+
+
+
+
+    //void TimerScript Turns on and off the timer//
+    public void TimerScript()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            {
+            timeonoff = true;
+        }
+
+
+        if (timeonoff == true)
+        {
+            Sec += PlusOne * Time.deltaTime;
+
+        }
+        timer = Mathf.RoundToInt(Sec);
+        Minutes = Mathf.RoundToInt(Min);
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            timeonoff = false;
+
+        }
+        if (Sec >= 60f)
+        {
+            Min = Min + 1;
+            Sec = 0;
+        }
+        Debug.LogFormat("{0},,{2},{3}:", Timer_Min_Sec, "", Minutes, timer, "");
+
+
+    }
+
 }
 
 
