@@ -12,7 +12,7 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     public float SpeedRandomiser;
     public float SpeedMin;
     public float SpeedMax;
-
+    
     //Turn/2/
     public float right1;
     public float left1;
@@ -26,7 +26,7 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     public Animator Standard;
     public bool standard;
     public float countdown;
-   
+
     //Timer/3/
     public float Sec;
     public bool timeonoff;
@@ -40,7 +40,7 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     void Start()
     {
         start = false;
-        SpeedMin = 0.005f;
+        SpeedMin = 0.05f;
         SpeedMax = 0.05f;
         SpeedRandomiser = Random.Range(SpeedMin, SpeedMax);
         standard = false;
@@ -62,7 +62,6 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
     {
         left = false;
         right = false;
-
         StartNContinue();
         SpeedController();
         TurnLeft();
@@ -224,6 +223,9 @@ public class FullMovemntWAnimationsNColors : MonoBehaviour
 
 
     }
+
+
+        
 
 }
 
